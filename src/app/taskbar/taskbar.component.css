@@ -1,0 +1,36 @@
+/* Define a class for the button container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Define styles for the button */
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Change the button's background color and shadow when it is hovered over */
+button:hover {
+  background-color: #3e8e41;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Change the button's background color and shadow when it is clicked */
+button:active {
+  background-color: #367f39;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
