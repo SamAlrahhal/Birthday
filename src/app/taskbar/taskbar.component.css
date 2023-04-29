@@ -7,11 +7,13 @@ ul {
   background-color: #333;
   padding: 0;
   margin: 0;
-  position: absolute;
+  height: 100%;
+  position: fixed;
+  /* Make the taskbar fixed in position so it remains visible as you scroll */
   left: 0;
+  /* Place the taskbar on the left side of the website */
   top: 0;
-  bottom: 0;
-  width: 100px;
+  /* Place the taskbar at the top of the viewport */
 }
 
 li {
@@ -36,4 +38,10 @@ a:hover {
 .active {
   background-color: #555;
   font-weight: bold;
+}
+
+/* Add margin-top to the content to push it down by the height of the taskbar */
+.content {
+  margin-top: 50px;
+  /* Change the value to match the height of your taskbar */
 }
