@@ -20,7 +20,6 @@ import { ShowAllComponent } from './show-all/show-all.component';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
