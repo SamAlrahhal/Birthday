@@ -1,36 +1,39 @@
-/* Define a class for the button container */
-.button-container {
+ul {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
 }
 
-/* Define styles for the button */
-button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 12px 24px;
+li {
+  width: 100%;
   text-align: center;
+  margin: 5px 0;
+}
+
+a {
+  display: block;
+  color: #fff;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 0;
-  cursor: pointer;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
 }
 
-/* Change the button's background color and shadow when it is hovered over */
-button:hover {
-  background-color: #3e8e41;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+a:hover {
+  background-color: #555;
 }
 
-/* Change the button's background color and shadow when it is clicked */
-button:active {
-  background-color: #367f39;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.active {
+  background-color: #555;
+  font-weight: bold;
 }
