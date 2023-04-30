@@ -15,22 +15,43 @@ export class AddPersonComponent {
   birthdate: any;
   phone: any;
   constructor(private ngxCsvParser: NgxCsvParser) { }
-  file: any;
 
   onSubmit() {
  const data = [
-      { Name: this.name, Birthdate: this.birthdate, Phone: this.phone, Image: this.image }
+      { name: this.name, birthdate: this.birthdate, phone: this.phone, image: this.image }
     ];
 
-    // const replacer = (key, value) => value === null ? '' : value; // specify how you want to handle null values here
-    // const header = Object.keys(data[0]);
-    // let csv = data.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
-    // csv.unshift(header.join(','));
-    // let csvArray = csv.join('\r\n');
+  // const csv = this.formatDataAsCSV(data);
+  // const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  // saveAs(blob, 'people.csv');
 
-    // var blob = new Blob([csvArray], {type: 'text/csv' })
-    // saveAs(blob, "myFile.csv");
+    this.exportToCsv('people.csv', data);
 
 
  }
+  formatDataAsCSV(data: { name: any; birthdate: any; phone: any; image: any; }[]) {
+  const csvHeader = ['Image', 'Name', 'Birthdate', 'Phone'];
+  const csvData = data.map(item => [item.image, item.name, item.birthdate, item.phone]);
+  const csv = [csvHeader, ...csvData].join('\n');
+  return csv; // Add this line to return the CSV string
+  }
+
+exportToCsv(filename: string, rows: any[]) {
+   const separator = ',';
+  const keys = Object.keys(rows[0]);
+
+  // Build the CSV string
+  let csv = keys.join(separator) + '\n';
+  for (let row of rows) {
+    csv += keys.map(key => row[key]).join(separator) + '\n';
+  }
+
+  // Create a Blob with the CSV data
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+
+  // Save the file using FileSaver.js
+  saveAs(blob, filename);
+}
+
+
 }
