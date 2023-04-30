@@ -1,1 +1,22 @@
-<p>show-all works!</p>
+<div class="container">
+  <h2>All People</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Birthdate</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through the people and display their information -->
+      <tr *ngFor="let person of people">
+        <td><img [src]="person.image" alt="Person"></td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.birthdate }}</td>
+        <td>{{ person.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

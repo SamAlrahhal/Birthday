@@ -28,6 +28,13 @@ export class AddPersonComponent {
     this.exportToCsv('people.csv', data);
 
 
+  //reset form
+  this.name = '';
+  this.birthdate = '';
+  this.phone = '';
+  this.image = '';
+
+
  }
   formatDataAsCSV(data: { name: any; birthdate: any; phone: any; image: any; }[]) {
   const csvHeader = ['Image', 'Name', 'Birthdate', 'Phone'];

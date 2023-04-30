@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { ShowAllComponent } from './show-all/show-all.component';
+
 @NgModule({
   declarations: [
     AppComponent,
