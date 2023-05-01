@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { ShowAllComponent } from './show-all/show-all.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+
+
 
 @NgModule({
   declarations: [
@@ -21,6 +25,8 @@ import { ShowAllComponent } from './show-all/show-all.component';
     AppRoutingModule,
     FormsModule,
     RouterModule,
+    CommonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

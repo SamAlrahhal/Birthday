@@ -1,26 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../DataService';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddPersonComponent } from '../add-person/add-person.component';
+import { Person } from '../interface/person';
 
 @Component({
   selector: 'app-show-all',
   templateUrl: './show-all.component.html',
   styleUrls: ['./show-all.component.css']
 })
-export class ShowAllComponent implements OnInit {
+export class ShowAllComponent {
 
-  people: any[] = [];
+  people: Person[] = [
+    {
+      image: 'https://via.placeholder.com/150',
+      name: 'John Doe',
+      birthdate: '01/01/1970',
+      phoneNumber: '555-555-5555'
+    },
+    {
+      image: 'https://via.placeholder.com/150',
+      name: 'Jane Doe',
+      birthdate: '01/01/1980',
+      phoneNumber: '555-555-5555'
+    },
+    {
+      image: 'https://via.placeholder.com/150',
+      name: 'Bob Smith',
+      birthdate: '01/01/1990',
+      phoneNumber: '555-555-5555'
+    }
+  ];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dialog: MatDialog) { }
 
-  ngOnInit() {
-    this.dataService.getPeople().then(
-      people => {
-        this.people = people;
-      },
-      error => {
-        console.error(error);
-      }
-    );
+  openEditDialog(person: Person): void {
+    const dialogRef = this.dialog.open(AddPersonComponent, {
+      width: '500px',
+      data: person
+    });
   }
 
 }
