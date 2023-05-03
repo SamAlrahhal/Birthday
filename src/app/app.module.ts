@@ -10,6 +10,7 @@ import { AddPersonComponent } from './add-person/add-person.component';
 import { ShowAllComponent } from './show-all/show-all.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { EditPersonComponent } from './edit-person/edit-person.component';
 
 
 
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     TaskbarComponent,
     AddPersonComponent,
-    ShowAllComponent
+    ShowAllComponent,
+    EditPersonComponent
   ],
   imports: [
     BrowserModule,
