@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { EditPersonComponent } from './edit-person/edit-person.component';
+
 
 
 
@@ -28,7 +31,9 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
     FormsModule,
     RouterModule,
     CommonModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

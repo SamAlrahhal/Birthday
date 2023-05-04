@@ -6,38 +6,23 @@ import { Person } from '../interface/person';
 @Component({
   selector: 'app-show-all',
   templateUrl: './show-all.component.html',
-  styleUrls: ['./show-all.component.css']
+  styleUrls: ['./show-all.component.css'],
 })
 export class ShowAllComponent {
-
-  people: Person[] = [
-    {
-      image: 'https://via.placeholder.com/150',
-      name: 'John Doe',
-      birthdate: '01/01/1970',
-      phoneNumber: '555-555-5555'
-    },
-    {
-      image: 'https://via.placeholder.com/150',
-      name: 'Jane Doe',
-      birthdate: '01/01/1980',
-      phoneNumber: '555-555-5555'
-    },
-    {
-      image: 'https://via.placeholder.com/150',
-      name: 'Bob Smith',
-      birthdate: '01/01/1990',
-      phoneNumber: '555-555-5555'
+  people: any;
+  ngOnInit() {
+    const data = localStorage.getItem('userData');
+    if (data) {
+      this.people = JSON.parse(data); // set parsed data to people array
     }
-  ];
+  }
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) {}
 
   openEditDialog(person: Person): void {
     const dialogRef = this.dialog.open(EditPersonComponent, {
       width: '500px',
-      data: person
+      data: person,
     });
   }
-
 }

@@ -9,11 +9,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let person of people">
+    <tr *ngFor="let person">
       <td><img [src]="person.image"></td>
       <td>{{ person.name }}</td>
       <td>{{ person.birthdate }}</td>
-      <td>{{ person.phoneNumber }}</td>
+      <td>{{ person.phone }}</td>
       <td><button (click)="openEditDialog(person)">Edit</button></td>
     </tr>
   </tbody>
