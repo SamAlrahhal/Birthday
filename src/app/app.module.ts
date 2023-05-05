@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,9 +12,7 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { EditPersonComponent } from './edit-person/edit-person.component';
-
-
-
+import { ServerComponent } from './server/server.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +20,7 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
     TaskbarComponent,
     AddPersonComponent,
     ShowAllComponent,
-    EditPersonComponent
+    EditPersonComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,10 +29,9 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
     RouterModule,
     CommonModule,
     MatDialogModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
