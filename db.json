@@ -19,11 +19,11 @@
   "servers": [],
   "person": [
     {
-      "image": "C:\\fakepath\\E_HXiZqX0Ac2UyZ.png",
-      "name": "Admin@gmail.com",
-      "birthdate": "2023-05-09",
-      "phone": "0489763686",
-      "id": 1
+      "id": 1,
+      "name": "John Do",
+      "birthdate": "1990-01-01",
+      "phone": "555-34",
+      "image": "your-image-path"
     },
     {
       "image": "C:\\fakepath\\E_HXiZqX0Ac2UyZ.png",

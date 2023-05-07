@@ -9,7 +9,7 @@ import { Person } from '../person.model';
 })
 export class ServersService {
   constructor(private http: HttpClient) {}
-  private readonly API_URL = 'http://localhost:3000/people';
+  private readonly API_URL = 'http://localhost:3000/person';
 
   getServers(): Observable<Server[]> {
     const url = 'http://localhost:3000/servers';

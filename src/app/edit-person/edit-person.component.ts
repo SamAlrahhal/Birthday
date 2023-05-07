@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ServersService } from '../server/servers.service';
-import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-person',
@@ -9,19 +8,34 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./edit-person.component.css'],
 })
 export class EditPersonComponent implements OnInit {
-  ServersService: any;
-  dialogRef!: MatDialogRef<EditPersonComponent>;
   person: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private serversService: ServersService,
+    public dialogRef: MatDialogRef<EditPersonComponent>
+  ) {
     this.person = { ...data };
   }
-
   ngOnInit(): void {}
 
   onSubmit(): void {
-    this.ServersService.updatePerson(this.data).subscribe(() => {
+    this.serversService.updatePerson(this.person).subscribe(() => {
       this.dialogRef.close();
     });
+  }
+
+  onFileChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length) {
+      const file = target.files[0];
+      // You can handle the file object here, e.g., upload it to the server, display it, etc.
+      // For now, we just store it in the person object.
+      this.person.image = file;
+    }
+  }
+
+  onCancel(): void {
+    this.dialogRef.close();
   }
 }
