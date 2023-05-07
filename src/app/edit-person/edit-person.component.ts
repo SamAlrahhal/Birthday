@@ -21,7 +21,7 @@ export class EditPersonComponent implements OnInit {
 
   onSubmit(): void {
     this.serversService.updatePerson(this.person).subscribe(() => {
-      this.dialogRef.close();
+      this.dialogRef.close(this.person);
     });
   }
 

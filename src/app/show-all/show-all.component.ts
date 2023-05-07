@@ -41,7 +41,10 @@ export class ShowAllComponent implements OnInit {
     this.dialogRef.afterClosed().subscribe((updatedPerson: Person) => {
       if (updatedPerson) {
         this.serversService.updatePerson(updatedPerson).subscribe(() => {
-          this.getPeople();
+          const index = this.people.findIndex((p) => p.id === updatedPerson.id);
+          if (index !== -1) {
+            this.people[index] = updatedPerson;
+          }
         });
       }
     });
