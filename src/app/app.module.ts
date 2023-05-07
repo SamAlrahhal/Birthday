@@ -12,6 +12,7 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { EditPersonComponent } from './edit-person/edit-person.component';
+import { ServersService } from './server/servers.service';
 import { ServerComponent } from './server/server.component';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ServerComponent } from './server/server.component';
     AddPersonComponent,
     ShowAllComponent,
     EditPersonComponent,
+    ServerComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { ServerComponent } from './server/server.component';
     MatDialogModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ServersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

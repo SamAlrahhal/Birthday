@@ -6,6 +6,6 @@ export class Server {
   constructor() {
     this.id = 0;
     this.name = '';
-    this.status = 'offline';
+    this.status = 'online';
   }
 }
