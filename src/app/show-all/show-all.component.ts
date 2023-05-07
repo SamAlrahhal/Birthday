@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { EditPersonComponent } from '../edit-person/edit-person.component';
 import { ServersService } from '../server/servers.service';
+import { Person } from '../person.model';
 
 @Component({
   selector: 'app-show-all',
@@ -10,6 +11,7 @@ import { ServersService } from '../server/servers.service';
 })
 export class ShowAllComponent implements OnInit {
   people: any[] = [];
+  dialogRef: MatDialogRef<EditPersonComponent> | undefined;
 
   constructor(
     public dialog: MatDialog,
@@ -17,20 +19,31 @@ export class ShowAllComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getPeople();
+  }
+
+  getPeople(): void {
     this.serversService.getPeople().subscribe((people: any[]) => {
       this.people = people;
     });
   }
 
-  openEditDialog(person: any): void {
-    const dialogRef = this.dialog.open(EditPersonComponent, {
-      width: '450px',
-      data: person,
+  openEditDialog(person: Person): void {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+
+    this.dialogRef = this.dialog.open(EditPersonComponent, {
+      width: '300px',
+      data: { ...person },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      // Update the person data in the list
+    this.dialogRef.afterClosed().subscribe((updatedPerson: Person) => {
+      if (updatedPerson) {
+        this.serversService.updatePerson(updatedPerson).subscribe(() => {
+          this.getPeople();
+        });
+      }
     });
   }
 }

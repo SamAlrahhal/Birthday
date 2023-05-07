@@ -4,9 +4,12 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Person } from '../person.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ServersService {
   constructor(private http: HttpClient) {}
+  private readonly API_URL = 'http://localhost:3000/people';
 
   getServers(): Observable<Server[]> {
     const url = 'http://localhost:3000/servers';
@@ -34,5 +37,12 @@ export class ServersService {
   public getPeople(): Observable<any[]> {
     const url = 'http://localhost:3000/person';
     return this.http.get<any[]>(url);
+  }
+  updatePerson(person: Person): Observable<Person> {
+    return this.http.put<Person>(`${this.API_URL}/${person.id}`, person);
+  }
+  public deletePerson(id: number): Observable<Person> {
+    const url = 'http://localhost:3000/person/' + id;
+    return this.http.delete<Person>(url);
   }
 }
