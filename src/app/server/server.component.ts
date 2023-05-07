@@ -68,7 +68,7 @@ export class ServerComponent implements OnInit {
     });
   }
   onDeleteServer(server: Server): void {
-    this.serversService.deleteServer(server).subscribe({
+    this.serversService.deleteServer(server.id).subscribe({
       next: (response: any) => {
         console.log('server deleted: ', response);
         const index = this.servers.findIndex((s) => s.id === server.id);

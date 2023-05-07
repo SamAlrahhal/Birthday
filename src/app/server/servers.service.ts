@@ -16,4 +16,14 @@ export class ServersService {
     const url = 'https://localhost:3000/servers';
     return this.http.post<Server>(url, server);
   }
+
+  public deleteServer(id: number): Observable<Server> {
+    const url = 'https://localhost:3000/servers/' + id;
+    return this.http.delete<Server>(url);
+  }
+
+  public updateServer(server: Server): Observable<Server> {
+    const url = 'https://localhost:3000/servers/' + server.id;
+    return this.http.put<Server>(url, server);
+  }
 }
