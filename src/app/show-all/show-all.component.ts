@@ -1,28 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditPersonComponent } from '../edit-person/edit-person.component';
-import { Person } from '../interface/person';
+import { ServersService } from '../server/servers.service';
 
 @Component({
   selector: 'app-show-all',
   templateUrl: './show-all.component.html',
   styleUrls: ['./show-all.component.css'],
 })
-export class ShowAllComponent {
-  people: any;
-  ngOnInit() {
-    const data = localStorage.getItem('userData');
-    if (data) {
-      this.people = JSON.parse(data); // set parsed data to people array
-    }
+export class ShowAllComponent implements OnInit {
+  people: any[] = [];
+
+  constructor(
+    public dialog: MatDialog,
+    private serversService: ServersService
+  ) {}
+
+  ngOnInit(): void {
+    this.serversService.getPeople().subscribe((people: any[]) => {
+      this.people = people;
+    });
   }
 
-  constructor(private dialog: MatDialog) {}
-
-  openEditDialog(person: Person): void {
+  openEditDialog(person: any): void {
     const dialogRef = this.dialog.open(EditPersonComponent, {
-      width: '500px',
+      width: '450px',
       data: person,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      // Update the person data in the list
     });
   }
 }

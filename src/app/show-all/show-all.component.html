@@ -1,20 +1,3 @@
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Birthdate</th>
-      <th>Phone Number</th>
-      <th>Edit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let person">
-      <td><img [src]="person.image"></td>
-      <td>{{ person.name }}</td>
-      <td>{{ person.birthdate }}</td>
-      <td>{{ person.phone }}</td>
-      <td><button (click)="openEditDialog(person)">Edit</button></td>
-    </tr>
-  </tbody>
-</table>
+<div *ngFor="let person of people">
+  <app-person [person]="person" (click)="openEditDialog(person)"></app-person>
+</div>

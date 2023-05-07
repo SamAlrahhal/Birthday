@@ -1,0 +1,6 @@
+<div class="person-card">
+  <img [src]="person.image" alt="person image" class="person-image" />
+  <h3>{{ person.name }}</h3>
+  <p>Birthday: {{ person.birthdate | date:'MMM d' }}</p>
+  <p>Phone: {{ person.phone }}</p>
+</div>

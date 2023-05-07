@@ -31,4 +31,8 @@ export class ServersService {
     const url = 'http://localhost:3000/person';
     return this.http.post<Person>(url, person);
   }
+  public getPeople(): Observable<any[]> {
+    const url = 'http://localhost:3000/person';
+    return this.http.get<any[]>(url);
+  }
 }

@@ -26,6 +26,10 @@ export class AddPersonComponent {
     this.serversService.addPerson(newPerson).subscribe({
       next: (response: any) => {
         console.log('Person added: ', response);
+        newPerson.birthdate = '';
+        newPerson.image = '';
+        newPerson.name = '';
+        newPerson.phone = '';
       },
       error: (error: any) => {
         console.log('Error occurred: ', error);

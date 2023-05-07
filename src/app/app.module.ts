@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { EditPersonComponent } from './edit-person/edit-person.component';
 import { ServersService } from './server/servers.service';
 import { ServerComponent } from './server/server.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ServerComponent } from './server/server.component';
     ShowAllComponent,
     EditPersonComponent,
     ServerComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,

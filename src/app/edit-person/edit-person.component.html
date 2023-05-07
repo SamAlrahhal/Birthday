@@ -1,22 +1,22 @@
-<div class="container">
-  <h2>Edit</h2>
-  <form (submit)="onSubmit()">
-    <div class="form-group">
-      <label for="image">Image:</label>
-      <input type="file" id="image" name="image" required [(ngModel)]="image">
+<div>
+  <h2>Edit Person</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="image">Image</label>
+      <input type="file" id="image" name="image" required [(ngModel)]="person.image">
     </div>
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required [(ngModel)]="name">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required [(ngModel)]="person.name">
     </div>
-    <div class="form-group">
-      <label for="birthdate">Birthdate:</label>
-      <input type="date" id="birthdate" name="birthdate" required [(ngModel)]="birthdate">
+    <div>
+      <label for="birthdate">Birthdate</label>
+      <input type="date" id="birthdate" name="birthdate" required [(ngModel)]="person.birthdate">
     </div>
-    <div class="form-group">
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" required [(ngModel)]="phone">
+    <div>
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" required [(ngModel)]="person.phone">
     </div>
-    <button type="submit">Add Person</button>
+    <button type="submit">Save</button>
   </form>
 </div>
