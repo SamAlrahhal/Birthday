@@ -45,9 +45,4 @@ export class ServersService {
     const url = 'http://localhost:3000/person/' + id;
     return this.http.delete<Person>(url);
   }
-
-  public addPersons(person: FormData): Observable<Person> {
-    const url = 'http://localhost:3000/person';
-    return this.http.post<Person>(url, person);
-  }
 }

@@ -3,7 +3,7 @@
   <form (submit)="onSubmit()">
     <div class="form-group">
       <label for="image">Image:</label>
-      <input type="file" id="image" name="image" required [(ngModel)]="image">
+      <input type="file" id="inputPhoto" (change)="changeImage($event)" accept="image/*">
     </div>
     <div class="form-group">
       <label for="name">Name:</label>
