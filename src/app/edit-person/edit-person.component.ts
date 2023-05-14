@@ -27,11 +27,17 @@ export class EditPersonComponent implements OnInit {
 
   onFileChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    if (target.files && target.files.length) {
+
+    if (target.files && target.files[0]) {
       const file = target.files[0];
-      // You can handle the file object here, e.g., upload it to the server, display it, etc.
-      // For now, we just store it in the person object.
-      this.person.image = file;
+
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        this.person.image = reader.result as string;
+      };
+
+      reader.readAsDataURL(file);
     }
   }
 
