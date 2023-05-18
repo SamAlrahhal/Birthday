@@ -37,5 +37,6 @@ import { PersonComponent } from './person/person.component';
   ],
   providers: [ServersService],
   bootstrap: [AppComponent],
+  entryComponents: [EditPersonComponent],
 })
 export class AppModule {}
