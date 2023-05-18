@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-person',
@@ -8,7 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PersonComponent implements OnInit {
   @Input() person: any;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+  isShowAllRoute() {
+    return this.router.url === '/show-all';
+  }
 }
