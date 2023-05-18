@@ -3,7 +3,7 @@
   <form (ngSubmit)="onSubmit()">
     <div>
       <label for="image">Image</label>
-<input type="file" id="image" name="image" required (change)="onFileChange($event)">
+      <input type="file" id="image" name="image" required (change)="onFileChange($event)">
     </div>
     <div>
       <label for="name">Name</label>
@@ -18,5 +18,7 @@
       <input type="tel" id="phone" name="phone" required [(ngModel)]="person.phone">
     </div>
     <button type="submit">Save</button>
+    <button type="button" (click)="onDelete()" class="delete">Delete</button>
+
   </form>
 </div>

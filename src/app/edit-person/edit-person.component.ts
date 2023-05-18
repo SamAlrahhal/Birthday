@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ServersService } from '../server/servers.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-person',
@@ -13,7 +14,8 @@ export class EditPersonComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private serversService: ServersService,
-    public dialogRef: MatDialogRef<EditPersonComponent>
+    public dialogRef: MatDialogRef<EditPersonComponent>,
+    private location: Location
   ) {
     this.person = { ...data };
   }
@@ -43,5 +45,11 @@ export class EditPersonComponent implements OnInit {
 
   onCancel(): void {
     this.dialogRef.close();
+  }
+  onDelete(): void {
+    this.serversService.deletePerson(this.person.id).subscribe(() => {
+      this.dialogRef.close({ deleted: true, id: this.person.id });
+      window.location.reload();
+    });
   }
 }
