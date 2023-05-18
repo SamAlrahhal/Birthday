@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-//import { Person } from '../interface/person';
 import { Person } from '../person.model';
 import { ServersService } from '../server/servers.service';
 @Component({
@@ -25,7 +24,6 @@ export class AddPersonComponent {
 
     this.serversService.addPerson(newPerson).subscribe({
       next: (response: any) => {
-        console.log('Person added: ', response);
         newPerson.birthdate = '';
         newPerson.image = '';
         newPerson.name = '';
@@ -36,6 +34,7 @@ export class AddPersonComponent {
       },
       complete: () => {
         console.log('Completed');
+        window.location.reload();
       },
     });
   }
