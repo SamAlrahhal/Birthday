@@ -34,8 +34,6 @@ export class ShowAllComponent implements OnInit {
     }
 
     this.dialogRef = this.dialog.open(EditPersonComponent, {
-      width: '600px',
-      height: '400px',
       data: { ...person },
       panelClass: 'editDialog',
     });
