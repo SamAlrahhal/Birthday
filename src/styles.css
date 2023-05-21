@@ -8,4 +8,26 @@
   right:0;
   height: inherit;
 }
+body {
+  background-color: #006064;
+}
+h2{
+    font: normal 16px/26px system-ui,
+        Arial,
+        sans-serif;
+}
+h3{
+  color: #B2EBF2;
+  font: normal 16px/26px system-ui,
+    Arial,
+    sans-serif;
+}
+p{
+  color: #B2EBF2;
+    font: normal 16px/26px system-ui,
+        Arial,
+        sans-serif;
+}
+
+
 

@@ -2,9 +2,10 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #00838F;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #0097A7;
 }
 
 h2 {
@@ -28,7 +29,7 @@ label {
 input[type="text"],
 input[type="date"],
 input[type="tel"] {
-  width: 100%;
+  width: 96%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -37,14 +38,15 @@ input[type="tel"] {
 button[type="submit"] {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
+  background-color: #00B8D4;
+  color: #E0F7FA;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s;
+
 }
 
 button[type="submit"]:hover {
-  background-color: #555;
+  background-color: #00838F;
 }

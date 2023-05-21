@@ -14,8 +14,7 @@ export class EditPersonComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private serversService: ServersService,
-    public dialogRef: MatDialogRef<EditPersonComponent>,
-    private location: Location
+    public dialogRef: MatDialogRef<EditPersonComponent>
   ) {
     this.person = { ...data };
   }

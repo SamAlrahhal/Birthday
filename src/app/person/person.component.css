@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: #e0f0ff;
-  border: 1px solid #ccc;
+  background-color: #0097A7;
+  border: 1px solid #00838F;
   border-radius: 12px;
   width: 400px;
   height: 100px;
@@ -53,10 +53,19 @@
   border-radius: 3px;
   font-weight: bold;
   font-size: 0.8rem;
-  background-color: #e0f0ff;
+  background-color: #0097A7;
 }
 
 .gearIcon {
   width: 25px;
   height: 25px;
+}
+h3{
+  color: #00E5FF;
+  font: normal 16px/26px system-ui,
+    Arial,
+    sans-serif;
+}
+p{
+  color: #E0F7FA;
 }
