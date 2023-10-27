@@ -15,6 +15,7 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
 import { ServersService } from './server/servers.service';
 import { ServerComponent } from './server/server.component';
 import { PersonComponent } from './person/person.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PersonComponent } from './person/person.component';
     EditPersonComponent,
     ServerComponent,
     PersonComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
