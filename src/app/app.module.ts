@@ -16,6 +16,7 @@ import { ServersService } from './server/servers.service';
 import { ServerComponent } from './server/server.component';
 import { PersonComponent } from './person/person.component';
 import { HighLightDirective } from './high-light.directive';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HighLightDirective } from './high-light.directive';
     EditPersonComponent,
     ServerComponent,
     PersonComponent,
+    LoginComponent,
     HighLightDirective,
   ],
   imports: [
