@@ -17,6 +17,8 @@ import { ServerComponent } from './server/server.component';
 import { PersonComponent } from './person/person.component';
 import { HighLightDirective } from './high-light.directive';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { LogoutComponent } from './authentication/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { LoginComponent } from './login/login.component';
     PersonComponent,
     LoginComponent,
     HighLightDirective,
+    RegisterComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
